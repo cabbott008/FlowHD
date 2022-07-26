@@ -24,8 +24,8 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
     OSL(1),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPC),		     KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(1),
     LCTL_T(KC_Z),		       LGUI_T(KC_J),		      LT(0,KC_F),            LT(0,KC_M),            LT(0,KC_P),            LT(0,KC_V),                                                        QSPC,				           CMASPC,				        KC_QUOTE,					     DOTSPC,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
 
-    LALT_T(KC_HOME),	     LSFT_T(KC_END),        KC_LEFT,					     KC_RIGHT,					    TSPC,					                                MEH_T(KC_ESC),       HYPR_T(TG(1)),	                               ESPC,				          KC_DOWN,					     KC_UP,	               LGUI_T(KC_NO),         LCTL_T(KC_MPLY),
-                                                                                                LT(4,KC_T),            DSPC,				          KC_ENTER,            KC_TAB,					      SSPC,				           LT(4,KC_SPC)
+    LALT_T(KC_HOME),	     LSFT_T(KC_END),        KC_LEFT,					     KC_RIGHT,					    SSPC,					                                MEH_T(KC_ESC),       HYPR_T(TG(1)),	                               ESPC,				          KC_DOWN,					     KC_UP,	               LGUI_T(KC_NO),         LCTL_T(KC_MPLY),
+                                                                                                LT(4,KC_T),            DSPC,				          KC_ENTER,            KC_TAB,					      TSPC,				           LT(4,KC_SPC)
   ),
 
   [1] = LAYOUT_moonlander(
@@ -34,7 +34,8 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
     OSL(0),						     LSFT(KC_R),				    LSFT(KC_S),				     LSFT(KC_N),				    LSFT(KC_D),				     LSFT(KC_W),			      KC_LCBR,					   KC_RCBR,				        LALT(KC_BSPC),		     LSFT(KC_A),				    LSFT(KC_E),			       LSFT(KC_I),				   LSFT(KC_H),				    OSL(0),
     LSFT(KC_Z),            LSFT(KC_J),            LSFT(KC_F),				     LSFT(KC_M),				    LSFT(KC_P),				     LSFT(KC_V),												                                XCLMSPC,				       SCLNSPC,				        KC_LPRN,				       CLNSPC,				       RPSPC,			            LALT_T(KC_BSLS), 
     KC_TRNS,               KC_TRNS,               KC_TRNS,			       	 KC_TRNS,				        KC_DEL,					                              KC_TRNS,             KC_TRNS,			                                 ELPS,		              KC_PGDOWN,			       KC_PGUP,				       KC_TRNS,		            KC_TRNS,        
-                                                                                                 LSFT(KC_T),				     KC_NO,				        LSFT(KC_ENTER),      LSFT(KC_TAB),				  KC_NO,			           KC_NO
+                                                                                                LSFT(KC_T),				     KC_NO,				        
+    LSFT(KC_ENTER),      LSFT(KC_TAB),				    KC_NO,			           KC_NO
   ),
 
   [2] = LAYOUT_moonlander(
@@ -42,8 +43,8 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
     KC_BSPC,               KC_X,					        KC_G,						       KC_L,						      KC_C,                  KC_B,						      LGUI(KC_GRV),        TG(4),					        KC_MINUS,		           KC_U,						      KC_O,						       KC_Y,						     KC_K,						      KC_Q,
     OSL(3),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPACE),		   KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(3),
     LCTL_T(KC_Z),		       LGUI_T(KC_J),		      LT(0,KC_F),            LT(0,KC_M),            LT(0,KC_P),            LT(0,KC_V),                                                        KC_QUES,				       KC_COMMA,				      KC_QUOTE,					     KC_DOT,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
-    LALT_T(KC_HOME),	     LSFT_T(KC_END),        KC_LEFT,					     KC_RIGHT,					    TSPC,					                                MEH_T(KC_ESC),       HYPR_T(TG(1)),	                               KC_E,				          KC_DOWN,					     KC_UP,	               LGUI_T(KC_NO),         LCTL_T(KC_MPLY),
-                                                                                                LT(4,KC_T),            KC_D,				          KC_ENTER,            KC_TAB,					      KC_S,				           LT(4,KC_SPC)
+    LALT_T(KC_HOME),	     LSFT_T(KC_END),        KC_LEFT,					     KC_RIGHT,					    SSPC,					                                MEH_T(KC_ESC),       HYPR_T(TG(1)),	                               KC_E,				          KC_DOWN,					     KC_UP,	               LGUI_T(KC_NO),         LCTL_T(KC_MPLY),
+                                                                                                LT(4,KC_T),            KC_D,				          KC_ENTER,            KC_TAB,					      KC_T,				           LT(4,KC_SPC)
   ),
 
   [3] = LAYOUT_moonlander(

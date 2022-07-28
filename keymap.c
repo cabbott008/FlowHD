@@ -19,7 +19,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_HASH,               KC_9,                  KC_5,						       LT(0,KC_1),					  LT(0,KC_3),						 KC_7,					        TG(2),						   CMB_TOG,					      KC_6,						       LT(0,KC_2),					  LT(0,KC_0),						 KC_4,			           KC_8,			            KC_AT,
+    KC_HASH,               KC_9,                  LT(0,KC_5),						 LT(0,KC_1),					  LT(0,KC_3),						 LT(0,KC_7),					  TG(2),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
     KC_BSPC,               KC_X,					        KC_G,						       KC_L,						      KC_C,                  KC_B,						      LGUI(KC_GRV),        TG(4),					        KC_MINUS,		           KC_U,						      KC_O,						       KC_Y,						     KC_K,						      KC_Q,
     OSL(1),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPC),		     KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(1),
     LCTL_T(KC_Z),		       LGUI_T(KC_J),		      KC_F,                  KC_M,                  KC_P,                  KC_V,                                                              QSPC,				           CMASPC,				        KC_QUOTE,					     DOTSPC,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   ),
 
   [2] = LAYOUT_moonlander(
-    KC_HASH,               KC_9,                  KC_5,						       LT(0,KC_1),						LT(0,KC_3),						 KC_7,					        TG(0),						   CMB_TOG,					      KC_6,						       LT(0,KC_2),					  LT(0,KC_0),						 KC_4,			           KC_8,			            KC_AT,
+    KC_HASH,               KC_9,                  LT(0,KC_5),						 LT(0,KC_1),						LT(0,KC_3),						 LT(0,KC_7),					  TG(0),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
     KC_BSPC,               KC_X,					        KC_G,						       KC_L,						      KC_C,                  KC_B,						      LGUI(KC_GRV),        TG(4),					        KC_MINUS,		           KC_U,						      KC_O,						       KC_Y,						     KC_K,						      KC_Q,
     OSL(3),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPACE),		   KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(3),
     LCTL_T(KC_Z),		       LGUI_T(KC_J),		      KC_F,                  KC_M,                  KC_P,                  KC_V,                                                              KC_QUES,				       KC_COMMA,				      KC_QUOTE,					     KC_DOT,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
@@ -206,7 +206,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
         break;
-        case LT(0,KC_2):
+        case LT(0,KC_5):
             if (!record->tap.count && record->event.pressed) {
                 tap_code16(LGUI(KC_Z)); // Hold f to send Cmd-Z for Undo 
                 return false;
@@ -221,7 +221,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return true;             // Return true for normal processing of tap keycode
 
-        break;
+       break; 
         case LT(0,KC_1):
             if (!record->tap.count && record->event.pressed) {
                 tap_code16(LGUI(KC_C)); // Hold p to send Cmd-C for Copy
@@ -230,7 +230,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return true;             // Return true for normal processing of tap keycode
     
         break;
-        case LT(0,KC_0):
+        case LT(0,KC_7):
             if (!record->tap.count && record->event.pressed) {
                 tap_code16(LGUI(KC_V)); // Hold v to send Cmd-V for Paste
                 return false;

@@ -15,11 +15,19 @@ enum custom_keycodes {
     ELPS,
     ESPC,
     SSPC, 
+    QMKLS,
+    FRMWR,
+    FLWHD,
+    SLCTALL,
+    UNDO,
+    COPY,
+    CUT,
+    PASTE,
 };
 
 const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_HASH,               KC_9,                  LT(0,KC_5),						 LT(0,KC_1),					  LT(0,KC_3),						 LT(0,KC_7),					  TG(2),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
+    KC_HASH,               KC_9,                  KC_5,						       KC_1,					        KC_3,						       KC_7,					        TG(2),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
     KC_BSPC,               KC_X,					        KC_G,						       KC_L,						      KC_C,                  KC_B,						      LGUI(KC_GRV),        TG(4),					        KC_MINUS,		           KC_U,						      KC_O,						       KC_Y,						     KC_K,						      KC_Q,
     OSL(1),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPC),		     KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(1),
     LCTL_T(KC_Z),		       LGUI_T(KC_J),		      KC_F,                  KC_M,                  KC_P,                  KC_V,                                                              QSPC,				           CMASPC,				        KC_QUOTE,					     DOTSPC,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
@@ -37,7 +45,7 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   ),
 
   [2] = LAYOUT_moonlander(
-    KC_HASH,               KC_9,                  LT(0,KC_5),						 LT(0,KC_1),						LT(0,KC_3),						 LT(0,KC_7),					  TG(0),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
+    KC_HASH,               KC_9,                  KC_5,						       KC_1,						      KC_3,						       KC_7,					        TG(0),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
     KC_BSPC,               KC_X,					        KC_G,						       KC_L,						      KC_C,                  KC_B,						      LGUI(KC_GRV),        TG(4),					        KC_MINUS,		           KC_U,						      KC_O,						       KC_Y,						     KC_K,						      KC_Q,
     OSL(3),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPACE),		   KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(3),
     LCTL_T(KC_Z),		       LGUI_T(KC_J),		      KC_F,                  KC_M,                  KC_P,                  KC_V,                                                              KC_QUES,				       KC_COMMA,				      KC_QUOTE,					     KC_DOT,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
@@ -56,11 +64,20 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
 
   [4] = LAYOUT_moonlander(
     KC_TRNS,			         KC_F9,						      KC_F5,						     KC_F1,				          KC_F3,				         KC_F7,			            TO(0),						   KC_LGUI,					      KC_F6,			           KC_F2,			            KC_F10,			           KC_F4,			           KC_F8,			            KC_F11,
-    KC_TAB,					       KC_EXLM,				        KC_AT,				         KC_LCBR,			          KC_RCBR,			         KC_PIPE,			          TO(0),						   KC_TRNS,		    	      KC_UP,				         KC_KP_7,				        KC_KP_8,				       KC_KP_9,				       KC_PAST,			          KC_F12, 
-    KC_BSPC,				       KC_HASH,			          KC_DLR,				         KC_LPRN,				        KC_RPRN,			         KC_GRAVE,			        KC_TRNS,				     KC_TRNS,			          KC_DOWN,				       KC_KP_4,				        KC_KP_5,				       KC_KP_6,				       KC_KP_MINUS,				    KC_KP_PLUS, 
+    KC_TAB,					       KC_Z,				          KC_Q,				           KC_AT,			            KC_GRV,			           KC_PIPE,			          TO(0),						   KC_TRNS,		    	      KC_UP,				         KC_KP_7,				        KC_KP_8,				       KC_KP_9,				       KC_PAST,			          KC_F12, 
+    KC_BSPC,				       SLCTALL,			          UNDO,				           COPY,				          CUT,			             PASTE,			            KC_TRNS,				     KC_TRNS,			          KC_DOWN,				       KC_KP_4,				        KC_KP_5,				       KC_KP_6,				       KC_KP_MINUS,				    KC_KP_PLUS, 
     KC_LSHIFT,				     KC_PERC,			          KC_CIRC,			         KC_LBRC,			          KC_RBRC,			         KC_TILD,												                                    KC_KP_0,				       KC_KP_1,				        KC_KP_2,				       KC_KP_3,				       KC_KP_EQUAL,				    KC_KP_SLASH,
     TO(0),					       KC_BSLS,				        KC_LGUI,			         KC_NO,						      KC_NO,						                            TO(0),						 	 KC_TAB,				                               KC_BSPC,				        KC_KP_COMMA,				   KC_KP_DOT,				     KC_LEFT,				        KC_RIGHT,       
-                                                                                                KC_SPC,                KC_NO,						      KC_ENTER,            KC_TAB,					      KC_NO,				         KC_SPC
+                                                                                                OSL(5),                KC_NO,						      KC_ENTER,            KC_TAB,					      KC_NO,				         KC_SPC
+  ),
+
+  [5] = LAYOUT_moonlander(
+    KC_HASH,               KC_9,                  KC_5,						       KC_1,					        KC_3,						       KC_7,					        TG(2),						   CMB_TOG,					      KC_6,						       KC_2,					        KC_0,						       KC_4,			           KC_8,			            KC_AT,
+    KC_BSPC,               KC_X,					        KC_G,						       KC_L,						      KC_C,                  KC_B,						      LGUI(KC_GRV),        TG(4),					        KC_MINUS,		           KC_U,						      KC_O,						       KC_Y,						     KC_K,						      KC_Q,
+    OSL(1),						     KC_R,						      KC_S,                  KC_N,                  KC_D,                  KC_W,                  LT(0,KC_LBRC),       LT(0,KC_RBRC),		      LALT(KC_BSPC),		     KC_A,			            KC_E,			             KC_I,			           KC_H,			            OSL(1),
+    LCTL_T(KC_Z),		       LGUI_T(KC_J),		      KC_F,                  KC_M,                  KC_P,                  KC_V,                                                              QSPC,				           QMKLS,				          FRMWR,					       FLWHD,			         LSFT_T(KC_DQUO),			  LALT_T(KC_SLSH), 
+    LALT_T(KC_HOME),	     LSFT_T(KC_END),        KC_LEFT,					     KC_RIGHT,					    DSPC,					                                MEH_T(KC_ESC),       HYPR_T(TG(1)),	                               TSPC,				          KC_DOWN,					     KC_UP,	               LGUI_T(KC_NO),         LCTL_T(KC_MPLY),
+                                                                                                LT(4,KC_T),            SSPC,				          KC_ENTER,            KC_TAB,					      ESPC,				           LT(4,KC_SPC)
   ),
 };
 
@@ -70,7 +87,7 @@ void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
 
-const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][5] = {
+const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][6] = {
 
     [0] = { {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255} },
 
@@ -81,6 +98,8 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][5] = {
     [3] = { {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255}, {210,252,255} },
     
     [4] = { {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255} },
+
+    [5] = { {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255} },
 };
 
 void set_layer_color(int layer) {
@@ -117,6 +136,9 @@ void rgb_matrix_indicators_user(void) {
       break;
     case 4:
       set_layer_color(4);
+      break;
+    case 5:
+      set_layer_color(5);
       break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
@@ -206,34 +228,60 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
         break;
-        case LT(0,KC_5):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(LGUI(KC_Z)); // Hold f to send Cmd-Z for Undo 
-                return false;
+        case QMKLS:
+        if (record->event.pressed) {
+            SEND_STRING ("cd Documents/qmk_firmware");
+        }
+
+        break;
+        case FRMWR:
+        if (record->event.pressed) {
+            SEND_STRING ("qmk compile -kb moonlander -km FlowHD");
+        }
+
+        break;
+        case FLWHD:
+        if (record->event.pressed) {
+            SEND_STRING ("cd keyboards/moonlander/keymaps/FlowHD");
+        }
+
+        break;
+        case SLCTALL:
+        if (record->event.pressed) {
+            tap_code16(LGUI(KC_A)); // Hold f to send Cmd-Z for Undo 
+            return false;
         }
         return true;             // Return true for normal processing of tap keycode
 
         break;
-        case LT(0,KC_3):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(LGUI(KC_X)); // Hold m to send Cmd-X for Cut 
-                return false;
+        case UNDO:
+        if (record->event.pressed) {
+            tap_code16(LGUI(KC_Z)); // Hold f to send Cmd-Z for Undo 
+            return false;
         }
         return true;             // Return true for normal processing of tap keycode
 
-       break; 
-        case LT(0,KC_1):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(LGUI(KC_C)); // Hold p to send Cmd-C for Copy
-                return false;
+        break;
+        case COPY:
+        if (record->event.pressed) {
+            tap_code16(LGUI(KC_C)); // Hold p to send Cmd-C for Copy
+            return false;
         }
         return true;             // Return true for normal processing of tap keycode
     
         break;
-        case LT(0,KC_7):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(LGUI(KC_V)); // Hold v to send Cmd-V for Paste
-                return false;
+        case CUT:
+        if (record->event.pressed) {
+            tap_code16(LGUI(KC_X)); // Hold m to send Cmd-X for Cut 
+            return false;
+        }
+        return true;             // Return true for normal processing of tap keycode
+
+        break; 
+        case PASTE:
+        if (record->event.pressed) {
+            tap_code16(LGUI(KC_V)); // Hold v to send Cmd-V for Paste
+            return false;
         }
         return true;             // Return true for normal processing of tap keycode
 

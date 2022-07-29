@@ -24,14 +24,10 @@ SUBS(C289, SS_LALT(SS_LCTL(SS_LGUI(SS_LSFT(SS_TAP(X_Z))))), KC_F, KC_M) // Go to
 SUBS(C290, SS_LGUI(SS_TAP(X_SPACE)), KC_D, KC_A) // Command-Space to call Alfred
 SUBS(C291, SS_LALT(SS_LGUI(SS_TAP(X_C))), KC_R, KC_D, KC_A) // Reveal Alfred Clipboard History
 SUBS(C293, SS_LALT(SS_TAP(X_V)), KC_P, KC_V) // Hotkey for TimeStamp
-SUBS(C294, "qmk compile -kb moonlander -km FlowHD", KC_LEFT, KC_RIGHT) // Make firmware
-SUBS(C295, "cd Documents/qmk_firmware", KC_LEFT, KC_RIGHT, KC_N) // Firmware Directory
-SUBS(C296, "cd keyboards/moonlander/keymaps/FlowHD", KC_LEFT, KC_RIGHT, KC_S) // FlowHD Directory
 
 
 // Vim
 SUBS(C398, SS_TAP(X_ESC), KC_N, KC_E) // Escape
-
 
 
 TOGG(C999, 2, KC_L, KC_O) // Toggle to Layer 2

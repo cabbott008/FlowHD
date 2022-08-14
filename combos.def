@@ -16,7 +16,7 @@ SUBS(C192, "[[", KC_N, KC_W) // Create Link Brackets in Obsidian
 
 
 // General Combos 
-SUBS(C205, SS_LSFT(SS_LALT(SS_TAP(X_MINUS))), KC_MINUS, KC_B) // Long Dash
+SUBS(C205, SS_LSFT(SS_LALT(SS_TAP(X_MINUS))), LT(0,KC_MINUS), KC_B) // Long Dash
 SUBS(C210, SS_LCTL(SS_LALT(SS_TAP(X_ENTER))), KC_X, KC_K) // Maximize Window via Rectangle
 SUBS(C287, SS_LCTL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_R))))), KC_R, KC_C, KC_U) // Add Reminder to Clickup
 SUBS(C288, SS_LCTL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_C))))), KC_C, KC_U) // Add Task to Clickup

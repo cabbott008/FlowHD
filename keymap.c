@@ -13,7 +13,7 @@ enum custom_keycodes {
     TSPC,
     DSPC,
     ELPS,
-    ESPC,
+    ESPC ,
     SSPC, 
     QMKLS,
     FRMWR,
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
     KC_BSPC,            KC_X,               KC_G,               KC_L,               KC_C,               KC_B,              LGUI(KC_GRV),        TG(4),               LT(0,KC_MINUS),     KC_U,               KC_O,               KC_Y,               KC_K,               KC_Q,
     OSL(1),             KC_R,               KC_S,               KC_N,               KC_D,               KC_W,              LT(0,KC_LBRC),       LT(0,KC_RBRC),       LALT(KC_BSPC),      KC_A,               KC_E,               KC_I,               KC_H,               OSL(1),
     LCTL_T(KC_Z),       LGUI_T(KC_J),       KC_F,               KC_M,               KC_P,               KC_V,                                                        QSPC,               CMASPC,             KC_QUOTE,           DOTSPC,             LSFT_T(KC_DQUO),    LALT_T(KC_SLSH),
-    LALT_T(KC_HOME),    LSFT_T(KC_END),     KC_LEFT,            KC_RIGHT,           DSPC,                                  MEH_T(KC_ESC),       HYPR_T(TG(1)),                           TSPC,               KC_DOWN,            KC_UP,              LGUI_T(KC_NO),      LCTL_T(KC_MPLY),
+    LALT_T(KC_HOME),    LSFT_T(KC_END),     KC_LEFT,            KC_RIGHT,           DSPC,                                  MEH_T(KC_ESC),       HYPR_T(TG(1)),                           LT(0,KC_SPC),         KC_DOWN,            KC_UP,              LGUI_T(KC_NO),      LCTL_T(KC_MPLY),
                                                                                     LT(4,KC_T),         SSPC,              KC_ENTER,            KC_TAB,              ESPC,               LT(4,KC_SPC)
   ),
 
@@ -198,12 +198,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
         break;
-        case TSPC:
-        if (record->event.pressed) {
-            SEND_STRING ("t ");
-        }
-
-        break;
+        // case LT(0,KC_SPC):  // This is a hack job to get my Combo to work with this where it wouldn't with TSPC
+        // if (record->event.pressed) {
+        //     SEND_STRING ("t");
+        // }
+        //
+        // break;
         case DSPC:
         if (record->event.pressed) {
             SEND_STRING ("d ");
@@ -304,7 +304,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         break;
         case LSFT_T(KC_DQUO):
             if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_DQUO); // Send KC_DQUO on tap
+                tap_code16(KC_DQUO); // Left Shift on Hold
                 return false;        // Return false to ignore further processing of key
         }
         return true;             // Return true for normal processing of tap keycode
@@ -313,6 +313,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LT(0,KC_MINUS):
             if (!record->tap.count && record->event.pressed) {
                 tap_code16(KC_MPLY); // Hold ? to send Play/Pause 
+                return false;
+        }
+        return true;             // Return true for normal processing of tap keycode
+
+        break;
+        case LT(0,KC_SPC):  // This is a hack job to get my Combo to work with this where it wouldn't with TSPC
+        if (record->event.pressed) {
+            SEND_STRING ("t");
+        }
+            if (!record->tap.count && record->event.pressed) {
+                tap_code16(KC_SPC); // Effectively eliminates the alternate hold state action via net duplication
                 return false;
         }
         return true;             // Return true for normal processing of tap keycode

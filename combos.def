@@ -4,8 +4,7 @@ SUBS(P001, "I find it interesting that ", KC_I, KC_F)
 SUBS(P002, "I have to run off screen for a few minutes. I'll be right back." SS_DELAY(1000) SS_TAP(X_ENTER), KC_B, KC_R)
 
 // Combos relating to Word Enders
-SUBS(C151, ",", KC_U, KC_O) // Unspaced Comma
-SUBS(C152, ".", KC_O, KC_Y) // Unspaced Period
+SUBS(C152, ",", KC_O, KC_Y) // Unspaced Comma
 
 
 // Obsidian

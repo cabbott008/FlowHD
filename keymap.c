@@ -199,9 +199,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return true;             // Return true for normal processing of tap keycode
 
         break;
-        case LSFT_T(KC_DQUO):
+        case LGUI_T(KC_DQUO):
             if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_DQUO); // Left Shift on Hold
+                tap_code16(KC_DQUO); // Left Command Key on Hold
                 return false;        // Return false to ignore further processing of key
         }
         return true;             // Return true for normal processing of tap keycode

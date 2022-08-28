@@ -17,18 +17,18 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
     KC_HASH,            KC_9,               KC_5,               KC_1,               KC_3,               KC_7,              TG(2),               TG(2),               KC_6,               KC_2,               KC_0,               KC_4,               KC_8,               KC_AT,
-    KC_BSPC,            KC_X,               KC_G,               KC_L,               KC_C,               KC_B,              LGUI(KC_GRV),        TG(2),               LT(0,KC_MINUS),     KC_U,               KC_O,               KC_Y,               KC_K,               KC_Q,
+    LALT_T(KC_Z),       LCTL_T(KC_X),       KC_G,               KC_L,               KC_C,               KC_B,              LGUI(KC_GRV),        TG(2),               LT(0,KC_MINUS),     KC_U,               KC_O,               KC_Y,               LCTL_T(KC_K),       LALT_T(KC_Q),
     OSL(1),             KC_R,               KC_S,               KC_N,               KC_D,               KC_W,              LT(0,KC_LBRC),       LT(0,KC_RBRC),       LALT(KC_BSPC),      KC_A,               KC_E,               KC_I,               KC_H,               OSL(1),
-    LCTL_T(KC_Z),       LGUI_T(KC_J),       KC_F,               KC_M,               KC_P,               KC_V,                                                        KC_QUES,            KC_COMM,             KC_QUOTE,           KC_DOT,             LSFT_T(KC_DQUO),    LALT_T(KC_SLSH),
-    LALT_T(KC_HOME),    LSFT_T(KC_END),     KC_LEFT,            KC_RIGHT,           LT(3,KC_BSPC),                         MEH_T(KC_ESC),       HYPR_T(TG(1)),                           LT(3,KC_DEL),       KC_DOWN,            KC_UP,              LGUI_T(KC_NO),      LCTL_T(KC_MPLY),
+    LSFT_T(KC_GRV),     LGUI_T(KC_J),       KC_F,               KC_M,               KC_P,               KC_V,                                                        KC_QUES,            KC_COMM,            KC_QUOTE,           KC_DOT,             LGUI_T(KC_DQUO),    LSFT_T(KC_SLSH),
+    KC_HOME,            KC_END,             KC_LEFT,            KC_RIGHT,           LT(3,KC_BSPC),                         MEH_T(KC_ESC),       HYPR_T(TG(1)),                           LT(3,KC_DEL),       KC_DOWN,            KC_UP,              KC_NO,              KC_MPLY,
                                                                                     LT(2,KC_T),         KC_ENTER,          KC_ENTER,            KC_TAB,              KC_TAB,             LT(2,KC_SPC)
   ),
 
   [1] = LAYOUT_moonlander(
     KC_DLR,             KC_PERC,            KC_TILD,            KC_PIPE,            KC_CIRC,            KC_LABK,           TG(2),               KC_TRNS,             KC_RABK,            KC_EQUAL,           KC_ASTR,            KC_PLUS,            KC_AMPR,            KC_GRV,
-    KC_BSPC,            LSFT(KC_X),         LSFT(KC_G),         LSFT(KC_L),         LSFT(KC_C),         LSFT(KC_B),        KC_TRNS,             KC_TRNS,             KC_UNDS,            LSFT(KC_U),         LSFT(KC_O),         LSFT(KC_Y),         LSFT(KC_K),         LSFT(KC_Q),
+    LSFT(KC_Z),         LSFT(KC_X),         LSFT(KC_G),         LSFT(KC_L),         LSFT(KC_C),         LSFT(KC_B),        KC_TRNS,             KC_TRNS,             KC_UNDS,            LSFT(KC_U),         LSFT(KC_O),         LSFT(KC_Y),         LSFT(KC_K),         LSFT(KC_Q),
     OSL(0),             LSFT(KC_R),         LSFT(KC_S),         LSFT(KC_N),         LSFT(KC_D),         LSFT(KC_W),        KC_LCBR,             KC_RCBR,             LALT(KC_BSPC),      LSFT(KC_A),         LSFT(KC_E),         LSFT(KC_I),         LSFT(KC_H),         OSL(0),
-    LSFT(KC_Z),         LSFT(KC_J),         LSFT(KC_F),         LSFT(KC_M),         LSFT(KC_P),         LSFT(KC_V),                                                  KC_EXLM,            KC_SCLN,            KC_LPRN,            LSFT(KC_SCLN),      KC_RPRN,            LALT_T(KC_BSLS),
+    KC_AT,              LSFT(KC_J),         LSFT(KC_F),         LSFT(KC_M),         LSFT(KC_P),         LSFT(KC_V),                                                  KC_EXLM,            KC_SCLN,            KC_LPRN,            LSFT(KC_SCLN),      KC_RPRN,            LALT_T(KC_BSLS),
     KC_TRNS,            KC_TRNS,            KC_TRNS,            KC_TRNS,            KC_BSPC,                               KC_TRNS,             KC_TRNS,                                 ELPS,               KC_PGDOWN,          KC_PGUP,            KC_TRNS,            KC_TRNS,
                                                                                     LSFT(KC_T),         LSFT(KC_ENTER),    LSFT(KC_ENTER),      LSFT(KC_TAB),        LSFT(KC_TAB),       KC_NO
   ),

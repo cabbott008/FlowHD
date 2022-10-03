@@ -22,9 +22,9 @@ SUBS(C293, SS_LALT(SS_TAP(X_V)), KC_P, KC_V) // Hotkey for TimeStamp
 
 
 // Vim
-SUBS(C398, SS_TAP(X_ESC), KC_N, KC_E) // Escape
+SUBS(C398, SS_TAP(X_ESC), LT(4,KC_BSPC), LT(4,KC_DEL)) // Escape
 
-
-TOGG(C997, 2, KC_L, KC_O) // Toggle to Layer 2
-TOGG(C998, 2, KC_AT, KC_KP_8) // Toggle to Layer 2
-TOGG(C999, 3, KC_BSPC, KC_Q) // Toggle to Layer 3
+TOGG(C996, 2, LT(3,KC_T), LT(3,KC_SPC)) // Toggle to Layer 2
+TOGG(C997, 3, KC_L, KC_O) // Toggle to Layer 3
+TOGG(C998, 3, KC_AT, KC_KP_8) // Toggle to Layer 3
+TOGG(C999, 4, LALT_T(KC_Z), LALT_T(KC_Q)) // Toggle to Layer 4

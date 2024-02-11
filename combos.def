@@ -1,28 +1,208 @@
 // https://docs.qmk.fm/#/
 
-SUBS(P001, "I find it interesting that ", KC_I, KC_F)
-SUBS(P002, "I have to run off screen for a few minutes. I'll be right back." SS_DELAY(1000) SS_TAP(X_ENTER), KC_B, KC_R)
-
+SUBS(P002, "I have to run off screen for a few minutes. I'll be right back." SS_DELAY(500) SS_TAP(X_ENTER), KC_B, KC_SCOLON)
 
 // Obsidian
-SUBS(C196, SS_LGUI(SS_LALT(SS_LCTL(SS_LSFT(SS_TAP(X_D))))), KC_D, KC_Y) // Go to Today's Daily Note
-SUBS(C197, SS_LGUI(SS_LCTL(SS_TAP(X_SPACE))), KC_M, KC_QUOTE) // Pull up Emoji Picker
-SUBS(C192, "[[", KC_N, KC_W) // Create Link Brackets in Obsidian
+// SUBS(C196, SS_LGUI(SS_LALT(SS_LCTL(SS_LSFT(SS_TAP(X_D))))), KC_D, KC_Y) // Go to Today's Daily Note
+SUBS(C192, "[[", KC_A, KC_SCOLON) // Create Link Brackets in Obsidian
 
+// General Combos
+SUBS(C204, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_7) SS_TAP(X_5) SS_TAP(X_7) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_1, KC_LSFT) // Bold Red !
+SUBS(C205, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_7) SS_TAP(X_5) SS_TAP(X_3) SS_TAP(X_SPC), RALT_T(KC_UP), KC_SLASH, KC_RSFT) // Bold Red ?
+SUBS(C206, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_7) SS_TAP(X_4) SS_TAP(X_C) SS_TAP(X_SPC), RALT_T(KC_UP), KC_SLASH, KC_BSLASH) // Bold Red X
+SUBS(C207, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_0) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_1) // Circled 1
+SUBS(C208, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_1) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_2) // Circled 2
+SUBS(C209, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_2) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_3) // Circled 3
+SUBS(C210, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_3) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_4) // Circled 4
+SUBS(C211, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_4) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_5) // Circled 5
+SUBS(C212, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_5) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_6) // Circled 6
+SUBS(C213, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_6) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_7) // Circled 7
+SUBS(C214, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_7) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_8) // Circled 8
+SUBS(C215, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_8) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_9) // Circled 9
+SUBS(C216, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_9) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_0) // Circled 10
+SUBS(C217, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_A) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_1, KC_EQUAL) // Circled 11
+SUBS(C218, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_B) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_2, KC_MINUS) // Circled 12
+SUBS(C219, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_C) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_3, KC_EQUAL) // Circled 13
+SUBS(C220, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_D) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_4, KC_MINUS) // Circled 14
+SUBS(C221, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_E) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_5, KC_EQUAL) // Circled 15
+SUBS(C222, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_6) SS_TAP(X_F) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_6, KC_MINUS) // Circled 16
+SUBS(C223, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_7) SS_TAP(X_0) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_7, KC_EQUAL) // Circled 17
+SUBS(C224, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_7) SS_TAP(X_1) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_8, KC_MINUS) // Circled 18
+SUBS(C225, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_7) SS_TAP(X_2) SS_TAP(X_SPC), RALT_T(KC_UP), KC_MINUS, KC_9, KC_EQUAL) // Circled 19
+SUBS(C226, SS_LSFT(SS_LCTL(SS_TAP(X_U))) SS_TAP(X_2) SS_TAP(X_4) SS_TAP(X_7) SS_TAP(X_3) SS_TAP(X_SPC), LALT_T(KC_LEFT), KC_EQUAL, KC_0, KC_MINUS) // Circled 20
 
-// General Combos 
-SUBS(C205, SS_LSFT(SS_LALT(SS_TAP(X_MINUS))), LT(0,KC_MINUS), KC_B) // Long Dash
-SUBS(C210, SS_LCTL(SS_LALT(SS_TAP(X_ENTER))), LCTL_T(KC_X), LCTL_T(KC_K)) // Maximize Window via Rectangle
-SUBS(C287, SS_LCTL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_R))))), KC_R, KC_C, KC_U) // Add Reminder to Clickup
-SUBS(C288, SS_LCTL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_C))))), KC_C, KC_U) // Add Task to Clickup
-SUBS(C289, SS_LALT(SS_LCTL(SS_LGUI(SS_LSFT(SS_TAP(X_Z))))), KC_F, KC_M) // Go to FocusMate
-SUBS(C290, SS_LGUI(SS_TAP(X_SPACE)), KC_D, KC_A) // Command-Space to call Alfred
-SUBS(C291, SS_LALT(SS_LGUI(SS_TAP(X_C))), KC_R, KC_D, KC_A) // Reveal Alfred Clipboard History
-SUBS(C293, SS_LALT(SS_TAP(X_V)), KC_P, KC_V) // Hotkey for TimeStamp
+// Vim-Emacs
+SUBS(C398, SS_TAP(X_TAB) SS_DELAY(250) "practice words missed" SS_DELAY(250) SS_TAP(X_ENTER), LCTL(KC_BSPC), KC_BSPC) // Escape
 
+// Combo Modifiers
+COMB(M000, KC_LGUI, LGUI_T(KC_RIGHT), KC_A)
+COMB(M001, LGUI(KC_LCTL), LGUI_T(KC_RIGHT), KC_A, KC_S)
+COMB(M002, LGUI(KC_LALT), LGUI_T(KC_RIGHT), KC_A, KC_D)
+COMB(M003, LGUI(KC_LSFT), LGUI_T(KC_RIGHT), KC_A, KC_F)
+COMB(M004, LGUI(LCTL(KC_LALT)), LGUI_T(KC_RIGHT), KC_A, KC_S, KC_D)
+COMB(M005, LGUI(LCTL(KC_LSFT)), LGUI_T(KC_RIGHT), KC_A, KC_S, KC_F)
+COMB(M006, LGUI(LALT(KC_LSFT)), LGUI_T(KC_RIGHT), KC_A, KC_D, KC_F)
+COMB(M007, LGUI(LCTL(LALT(KC_LSFT))), LGUI_T(KC_RIGHT), KC_A, KC_S, KC_D, KC_F)
+COMB(M008, KC_LCTL, LGUI_T(KC_RIGHT), KC_S)
+COMB(M009, LCTL(KC_LALT), LGUI_T(KC_RIGHT), KC_S, KC_D)
+COMB(M010, LCTL(KC_LSFT), LGUI_T(KC_RIGHT), KC_S, KC_F)
+COMB(M011, LCTL(LALT(KC_LSFT)), LGUI_T(KC_RIGHT), KC_S, KC_D, KC_F)
+COMB(M012, KC_LALT, LGUI_T(KC_RIGHT), KC_D)
+COMB(M013, LALT(KC_LSFT), LGUI_T(KC_RIGHT), KC_D, KC_F)
+COMB(M014, KC_LSFT, LGUI_T(KC_RIGHT), KC_F)
+COMB(M020, KC_RGUI, RCTL_T(KC_DOWN), KC_SCOLON)
+COMB(M021, RGUI(KC_LCTL), RCTL_T(KC_DOWN), KC_SCOLON, KC_L)
+COMB(M022, RGUI(KC_LALT), RCTL_T(KC_DOWN), KC_SCOLON, KC_K)
+COMB(M023, RGUI(KC_LSFT), RCTL_T(KC_DOWN), KC_SCOLON, KC_J)
+COMB(M024, RGUI(LCTL(KC_LALT)), RCTL_T(KC_DOWN), KC_SCOLON, KC_L, KC_K)
+COMB(M025, RGUI(LCTL(KC_LSFT)), RCTL_T(KC_DOWN), KC_SCOLON, KC_L, KC_J)
+COMB(M026, RGUI(LALT(KC_LSFT)), RCTL_T(KC_DOWN), KC_SCOLON, KC_K, KC_J)
+COMB(M027, RGUI(LCTL(LALT(KC_LSFT))), RCTL_T(KC_DOWN), KC_SCOLON, KC_L, KC_K, KC_J)
+COMB(M028, KC_LCTL, RCTL_T(KC_DOWN), KC_L)
+COMB(M029, LCTL(KC_LALT), RCTL_T(KC_DOWN), KC_L, KC_K)
+COMB(M030, LCTL(KC_LSFT), RCTL_T(KC_DOWN), KC_L, KC_J)
+COMB(M031, LCTL(LALT(KC_LSFT)), RCTL_T(KC_DOWN), KC_L, KC_K, KC_J)
+COMB(M032, KC_LALT, RCTL_T(KC_DOWN), KC_K)
+COMB(M033, LALT(KC_LSFT), RCTL_T(KC_DOWN), KC_K, KC_J)
+COMB(M034, KC_LSFT, RCTL_T(KC_DOWN), KC_J)
 
-// Vim
-SUBS(C398, SS_TAP(X_ESC), LT(3,KC_T), LT(3,KC_SPC)) // Escape
+// Swap Hands
+COMB(M035, SH_TG, KC_A, KC_B)
+COMB(M036, SH_TG, KC_SCOLON, KC_N)
 
-TOGG(C996, 4, LT(4,KC_BSPC), LT(4,KC_DEL)) // Toggle to Layer 4
-TOGG(C999, 3, LALT_T(KC_Z), LALT_T(KC_Q)) // Toggle to Layer 3
+//TOGG(C996, 4, LT(4,KC_BSPC), LT(4,KC_DEL)) // Toggle to Layer 4
+//TOGG(C999, 3, LALT_T(KC_Z), LALT_T(KC_Q)) // Toggle to Layer 3
+
+// Chording Library
+//SUBS(L0001, "the ", LT(3,KC_T), LT(3,KC_SPC))
+//SUBS(L0002, "of ", KC_O, LGUI_T(KC_F))
+//SUBS(L0003, "and ", KC_A, KC_D)
+//SUBS(L0004, "to ", LT(3,KC_T), KC_O)
+//SUBS(L0005, "in ", KC_I, KC_N)
+//SUBS(L0006, "for ", LGUI_T(KC_F), KC_R)
+//SUBS(L0007, "is ", KC_I, KC_S)
+//SUBS(L0008, "on ", KC_O, KC_N)
+//SUBS(L0009, "that ", LT(3,KC_T), KC_H, KC_A)
+//SUBS(L0010, "by ", KC_B, LCTL_T(KC_Y))
+//SUBS(L0011, "this ", LT(3,KC_T), KC_H, KC_I)
+//SUBS(L0012, "with ", KC_W, KC_I)
+//SUBS(L0013, "I ", KC_I, KC_R)
+//SUBS(L0014, "you ", LCTL_T(KC_Y), KC_U)
+//SUBS(L0015, "it ", KC_I, LT(3,KC_T))
+//SUBS(L0016, "not ", KC_N, LT(3,KC_T))
+//SUBS(L0017, "or ", KC_O, KC_R)
+//SUBS(L0018, "be ", KC_B, KC_E)
+//SUBS(L0019, "are ", KC_A, KC_R)
+//SUBS(L0020, "from ", LGUI_T(KC_F), KC_M)
+//SUBS(L0021, "at ", KC_A, LT(3,KC_T))
+//SUBS(L0022, "as ", KC_A, KC_S)
+//SUBS(L0023, "your ", LCTL_T(KC_Y), KC_R)
+//SUBS(L0024, "all ", KC_A, KC_L)
+//SUBS(L0025, "have ", KC_H, KC_V)
+//SUBS(L0026, "new ", KC_N, KC_W)
+//SUBS(L0027, "more ", KC_M, KC_R)
+//SUBS(L0028, "an ", KC_A, KC_N)
+//SUBS(L0029, "was ", KC_W, KC_S)
+//SUBS(L0030, "we ", KC_W, KC_E)
+//SUBS(L0031, "will ", KC_W, KC_L)
+//SUBS(L0032, "home ", KC_H, KC_M)
+//SUBS(L0033, "can ", KC_C, KC_N)
+//SUBS(L0034, "us ", KC_U, KC_S)
+//SUBS(L0035, "about ", KC_A, KC_B)
+//SUBS(L0036, "if ", KC_I, LGUI_T(KC_F))
+//SUBS(L0037, "page ", KC_P, LCTL_T(KC_G))
+//SUBS(L0038, "my ", KC_M, LCTL_T(KC_Y))
+//SUBS(L0039, "has ", KC_H, KC_A, KC_S)
+//SUBS(L0040, "search ", KC_S, KC_H)
+//SUBS(L0041, "free ", LGUI_T(KC_F), KC_R, KC_E)
+//SUBS(L0042, "but ", KC_B, LT(3,KC_T))
+//SUBS(L0043, "our ", KC_O, KC_U)
+//SUBS(L0044, "one ", KC_1, KC_A)
+//SUBS(L0045, "other ", KC_O, LT(3,KC_T), KC_H)
+//SUBS(L0046, "do ", KC_D, KC_O)
+//SUBS(L0047, "no ", KC_N, LGUI_T(KC_DOT))
+//SUBS(L0048, "information ", KC_N, LGUI_T(KC_F), KC_O)
+//SUBS(L0049, "time ", LT(3,KC_T), KC_M)
+//SUBS(L0050, "they ", LT(3,KC_T), KC_H, KC_E)
+//SUBS(L0051, "site ", KC_S, KC_I, LT(3,KC_T), KC_E)
+//SUBS(L0052, "he ", KC_H, KC_E)
+//SUBS(L0053, "up ", KC_U, KC_P)
+//SUBS(L0054, "may ", KC_M, KC_A, LCTL_T(KC_Y))
+//SUBS(L0055, "what ", KC_W, KC_H, KC_A)
+//SUBS(L0056, "which ", KC_W, KC_H, KC_I)
+//SUBS(L0057, "their ", LT(3,KC_T), KC_H, KC_I, KC_R)
+//SUBS(L0058, "news ", KC_N, KC_W, KC_S)
+//SUBS(L0059, "out ", KC_O, KC_U, LT(3,KC_T))
+//SUBS(L0060, "use ", KC_U, KC_S, KC_E)
+//SUBS(L0061, "any ", KC_A, KC_N, LCTL_T(KC_Y))
+//SUBS(L0062, "there ", LT(3,KC_T), KC_H, KC_R)
+//SUBS(L0063, "see ", KC_S, KC_E, KC_I)
+//SUBS(L0064, "only ", KC_O, KC_L, LCTL_T(KC_Y))
+//SUBS(L0065, "so ", KC_S, KC_O)
+//SUBS(L0066, "his ", KC_H, KC_I, KC_S)
+//SUBS(L0067, "when ", KC_W, KC_H, KC_N)
+//SUBS(L0068, "contact ", KC_C, KC_N, LT(3,KC_T))
+//SUBS(L0069, "here ", KC_H, KC_R)
+//SUBS(L0070, "business ", KC_B, KC_S)
+//SUBS(L0071, "who ", KC_W, KC_H)
+//SUBS(L0072, "web ", KC_W, KC_E, KC_U)
+//SUBS(L0073, "also ", KC_A, KC_L, KC_O)
+//SUBS(L0074, "now ", KC_N, KC_O, KC_W)
+//SUBS(L0075, "help ", KC_H, KC_L)
+//SUBS(L0076, "get ", LCTL_T(KC_G), KC_E, LT(3,KC_T))
+//SUBS(L0077, "pm ", KC_P, KC_M)
+//SUBS(L0078, "view ", KC_V, KC_I)
+//SUBS(L0079, "online ", KC_O, KC_N, KC_C)
+//SUBS(L0080, "first ", KC_1, KC_U)
+//SUBS(L0081, "am ", KC_A, KC_M)
+//SUBS(L0082, "been ", KC_B, KC_N)
+//SUBS(L0083, "would ", KC_W, KC_O, KC_U)
+//SUBS(L0137, "should ", KC_S, KC_H, KC_O, KC_U)
+//SUBS(L0205, "could ", KC_C, KC_O, KC_U)
+//SUBS(L0084, "how ", KC_H, KC_O)
+//SUBS(L0085, "were ", KC_W, KC_R)
+//SUBS(L0086, "me ", KC_M, KC_E)
+//// SUBS(L0087, "services ", KC_, KC_)
+//SUBS(L0088, "some ", KC_S, KC_M)
+//SUBS(L0089, "these ", LT(3,KC_T), KC_H, KC_E, KC_S)
+//SUBS(L0090, "click ", KC_C, KC_L)
+//SUBS(L0091, "its ", KC_I, LT(3,KC_T), KC_S)
+//SUBS(L0092, "like ", KC_L, LALT_T(KC_K))
+//SUBS(L0093, "service ", KC_S, KC_E, KC_R, KC_V)
+//SUBS(L0094, "than ", LT(3,KC_T), KC_H, KC_N)
+//SUBS(L0095, "find ", LGUI_T(KC_F), KC_N)
+//SUBS(L0096, "price ", KC_P, KC_R)
+//SUBS(L0097, "date ", KC_D, LT(3,KC_T))
+//SUBS(L0098, "back ", KC_B, KC_A, LALT_T(KC_K))
+//SUBS(L0099, "top ", LT(3,KC_T), KC_P)
+//SUBS(L0100, "people ", KC_P, KC_L)
+//SUBS(L0101, "(417)849-4955", KC_N, KC_U)
+//SUBS(L0102, "curtisabbott@me.com", LCTL_T(KC_Y), KC_E, KC_M, KC_H)
+//SUBS(L0103, "Curtis Abbott", KC_A, KC_B, KC_N)
+//SUBS(L0104, "818 S. Red Maple Ct." SS_TAP(X_ENTER) "Nixa, MO 65714", KC_H, KC_M, KC_R)
+//SUBS(L0110, "don't ", KC_D, KC_N, LT(3,KC_T))
+//SUBS(L0111, "it's ", KC_I, KC_T, KC_QUOTE)
+//SUBS(L0112, "had ", KC_H, KC_A, KC_D)
+//SUBS(L0113, "list ", KC_L, KC_I, KC_S, LT(3,KC_T))
+//SUBS(L0114, "name ", KC_N, KC_A, KC_E)
+//SUBS(L0115, "just ", LSFT_T(KC_J), KC_U)
+//SUBS(L0116, "over ", KC_O, KC_V)
+//SUBS(L0117, "state ", KC_S, LT(3,KC_T), KC_A)
+//SUBS(L0118, "year ", LCTL_T(KC_Y), KC_E, KC_A)
+//SUBS(L0119, "day ", KC_D, LCTL_T(KC_Y))
+//SUBS(L0120, "into ", KC_I, KC_N, LT(3,KC_T), KC_O)
+//SUBS(L0121, "email ", KC_E, KC_M, KC_H)
+//SUBS(L0122, "two ", KC_2, KC_D)
+//SUBS(L0123, "health ", KC_H, KC_E, KC_L, LT(3,KC_T))
+//SUBS(L0124, "world ", KC_W, KC_R, KC_L)
+//SUBS(L0125, "next ", KC_N, LALT_T(KC_X))
+//SUBS(L0127, "go ", LCTL_T(KC_G), KC_O)
+//SUBS(L0128, "work ", KC_W, KC_R, LALT_T(KC_K))
+//SUBS(L0129, "last ", KC_L, KC_A, KC_S)
+//SUBS(L0130, "most ", KC_M, KC_O)
+//SUBS(L0135, "make ", KC_M, LALT_T(KC_K))
+//SUBS(L0136, "them ", LT(3,KC_T), KC_H, KC_M)
+//SUBS(L0155, "then ", LT(3,KC_T), KC_H, KC_E, KC_N)
+//SUBS(L0160, "where ", KC_W, KC_H, KC_R)
+//SUBS(L0181, "need ", KC_N, KC_D)
+//SUBS(L0230, "because ", KC_B, KC_U)

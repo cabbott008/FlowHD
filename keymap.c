@@ -4,10 +4,13 @@
 
 enum custom_keycodes {
     ELPS = ML_SAFE_RANGE,
+    MDASH,
+    NDASH,
+    DVIDE,
+    DGREE,
     QMKLS,
     FRMWR,
-    FLWHD,
-    QWRT,
+    FLSH,
     SLCTALL,
     UNDO,
     COPY,
@@ -15,50 +18,34 @@ enum custom_keycodes {
     PASTE,
 };
 
+// Layer 0 = Basic Qwerty (Blue), Layer 1 = FunctionKeys & NumPad (Green), Layer 2 = Various Specialty Keys
+
 const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_DLR,             KC_9,               KC_5,               KC_1,               KC_3,               KC_7,              TG(3),               TG(3),               KC_6,               KC_2,               KC_0,               KC_4,               KC_8,               KC_NO,
-    LALT_T(KC_Z),       LCTL_T(KC_X),       KC_G,               KC_L,               KC_C,               KC_B,              LGUI(KC_GRV),        KC_MPLY,             LT(0,KC_MINUS),     KC_U,               KC_O,               KC_Y,               LCTL_T(KC_K),       LALT_T(KC_Q),
-    OSL(1),             KC_R,               KC_S,               KC_N,               KC_D,               KC_W,              LT(0,KC_LBRC),       LT(0,KC_RBRC),       LALT(KC_BSPC),      KC_A,               KC_E,               KC_I,               KC_H,               OSL(1),
-    LSFT_T(KC_GRV),     LGUI_T(KC_J),       KC_F,               KC_M,               KC_P,               KC_V,                                                        KC_QUES,            KC_COMM,            KC_QUOTE,           KC_DOT,             LGUI_T(KC_DQUO),    LSFT_T(KC_SLSH),
-    KC_HOME,            KC_END,             KC_LEFT,            KC_RIGHT,           LT(4,KC_BSPC),                         MEH_T(KC_ESC),       HYPR_T(TG(1)),                           LT(4,KC_DEL),       KC_DOWN,            KC_UP,              KC_NO,              KC_MPLY,
-                                                                                    LT(3,KC_T),         KC_ENTER,          KC_NO,               QWRT,                KC_TAB,             LT(3,KC_SPC)
+    KC_EQUAL,           KC_9,               KC_5,               KC_1,               KC_3,               KC_7,              TO(2),               TO(2),               KC_6,               KC_2,               KC_0,               KC_4,               KC_8,               KC_MINUS,
+    LT(2, KC_TAB),      KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,              LGUI(KC_P),          LGUI(KC_W),          KC_Y,               KC_U,               KC_I,               KC_O,               KC_P,               LT(2, KC_BSLASH),
+    LT(1, KC_ESC),      KC_A,               KC_S,               KC_D,               KC_F,               KC_G,              KC_LBRC,             KC_RBRC,             KC_H,               KC_J,               KC_K,               KC_L,               KC_SCOLON,          KC_QUOTE,
+    KC_LSPO,            KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                                                        KC_N,               KC_M,               KC_COMMA,           KC_DOT,             KC_SLASH,           KC_RSPC,
+    KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_BSPC),                         TO(1),               TO(1),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_RSFT,
+                                                                                    KC_SPC,             KC_ENTER,          KC_HOME,             KC_END,              LT(1, KC_TAB),      KC_SPC
   ),
 
   [1] = LAYOUT_moonlander(
-    KC_NO,              KC_PERC,            KC_TILD,            KC_PIPE,            KC_CIRC,            KC_LABK,           TG(3),               KC_TRNS,             KC_RABK,            KC_EQUAL,           KC_ASTR,            KC_PLUS,            KC_AMPR,            KC_NO,
-    LSFT(KC_Z),         LSFT(KC_X),         LSFT(KC_G),         LSFT(KC_L),         LSFT(KC_C),         LSFT(KC_B),        KC_TRNS,             KC_TRNS,             KC_UNDS,            LSFT(KC_U),         LSFT(KC_O),         LSFT(KC_Y),         LSFT(KC_K),         LSFT(KC_Q),
-    OSL(0),             LSFT(KC_R),         LSFT(KC_S),         LSFT(KC_N),         LSFT(KC_D),         LSFT(KC_W),        KC_LCBR,             KC_RCBR,             LALT(KC_BSPC),      LSFT(KC_A),         LSFT(KC_E),         LSFT(KC_I),         LSFT(KC_H),         OSL(0),
-    KC_AT,              LSFT(KC_J),         LSFT(KC_F),         LSFT(KC_M),         LSFT(KC_P),         LSFT(KC_V),                                                  KC_EXLM,            KC_SCLN,          KC_LPRN,            LSFT(KC_SCLN),      KC_RPRN,            LALT_T(KC_BSLS),
-    KC_TRNS,            KC_TRNS,            KC_TRNS,            KC_TRNS,            KC_HASH,                               KC_TRNS,             KC_TRNS,                                 ELPS,               KC_PGDOWN,          KC_PGUP,            KC_NO,              KC_TRNS,
-                                                                                    LSFT(KC_T),         LSFT(KC_ENTER),    KC_NO,               KC_NO,               LSFT(KC_TAB),       KC_NO
+    KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
+    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
+    KC_ESC,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_2),         LSFT(KC_MINUS),     MDASH,              NDASH,              KC_LBRC,            KC_RBRC,
+    KC_LSPO,            KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,                                                       LSFT(KC_4),         LSFT(KC_5),         KC_GRV,             LSFT(KC_GRV),       LSFT(KC_LBRC),      LSFT(KC_RBRC),
+    KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_BSPC),                         TO(0),               TO(0),                                   KC_DEL,             RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_RSFT,
+                                                                                    KC_SPC,             KC_ENTER,          KC_PGUP,             KC_PGDN,             KC_TAB,             KC_SPC
   ),
 
   [2] = LAYOUT_moonlander(
-    KC_EQUAL,           KC_1,               KC_2,               KC_3,               KC_4,               KC_5,              TO(0),               KC_NO,               KC_6,               KC_7,               KC_8,               KC_9,               KC_0,               KC_MINUS,
-    KC_DEL,             KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,              KC_NO,               KC_NO,               KC_Y,               KC_U,               KC_I,               KC_O,               KC_P,               KC_BSLASH,
-    KC_ESC,             KC_A,               KC_S,               KC_D,               KC_F,               KC_G,              KC_LBRC,             KC_RBRC,             KC_H,               KC_J,               KC_K,               KC_L,               KC_SCOLON,          KC_QUOTE,
-    KC_LSFT,            KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                                                        KC_N,               KC_M,               KC_COMMA,           KC_DOT,             KC_SLASH,           KC_RSFT,
-    KC_NO,              KC_NO,              KC_LEFT,            KC_RIGHT,           LT(4,KC_BSPC),                         KC_NO,               KC_NO,                                   LT(4,KC_DEL),       KC_DOWN,            KC_UP,              KC_NO,              KC_NO,
-                                                                                    TO(0),              KC_ENTER,          KC_NO,               TO(0),               KC_TAB,             LT(3,KC_SPC)
-  ),
-
-  [3] = LAYOUT_moonlander(
-    KC_TRNS,            KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             TO(0),               TG(4),               KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_F11,
-    KC_TAB,             KC_NO,              KC_NO,              KC_AT,              KC_GRV,             KC_NO,             TO(0),               KC_DLR,              KC_KP_MINUS,        KC_KP_7,            KC_KP_8,            KC_KP_9,            KC_PAST,            KC_F12,
-    KC_BSPC,            UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_TRNS,             KC_TRNS,             KC_BSPC,            KC_KP_4,            KC_KP_5,            KC_KP_6,            KC_KP_DOT,          KC_KP_COMMA,
-    KC_LCBR,            KC_RCBR,            KC_LBRC,            KC_RBRC,            KC_LPRN,            KC_RPRN,                                                     KC_TAB,             KC_KP_1,            KC_KP_2,            KC_KP_3,            KC_KP_PLUS,         KC_KP_SLASH,
-    TO(0),              KC_BSLS,            KC_LGUI,            KC_NO,              KC_BSPC,                               TO(0),               KC_TAB,                                  KC_KP_0,            KC_DOWN,            KC_UP,              KC_LEFT,            KC_RIGHT,
-                                                                                    OSL(4),             KC_ENTER,          KC_NO,               KC_EQUAL,            KC_TAB,             KC_SPC
-  ),
-
-  [4] = LAYOUT_moonlander(
-    KC_HASH,            KC_9,               KC_5,               KC_1,               KC_3,               KC_7,              TO(0),               TG(3),               KC_6,               KC_2,               KC_0,               KC_4,               KC_8,               KC_AT,
-    LALT_T(KC_Z),       KC_X,               KC_G,               KC_L,               KC_C,               KC_B,              LGUI(KC_GRV),        TG(3),               KC_MINUS,           KC_U,               KC_O,               KC_Y,               KC_K,               LALT_T(KC_Q),
-    OSL(1),             KC_R,               KC_S,               KC_N,               KC_D,               KC_W,              LT(0,KC_LBRC),       LT(0,KC_RBRC),       LALT(KC_BSPC),      KC_A,               KC_E,               KC_I,               KC_H,               OSL(1),
-    LCTL_T(KC_Z),       LGUI_T(KC_J),       KC_F,               KC_M,               KC_P,               KC_V,                                                        KC_QUES,            QMKLS,              FRMWR,              FLWHD,              LSFT_T(KC_DQUO),    LALT_T(KC_SLSH),
-    LALT_T(KC_HOME),    LSFT_T(KC_END),     KC_LEFT,            KC_RIGHT,           KC_BSPC,                               MEH_T(KC_ESC),       HYPR_T(TG(1)),                           KC_DEL,             KC_DOWN,            KC_UP,              LGUI_T(KC_NO),      LCTL_T(KC_MPLY),
-                                                                                    LT(3,KC_T),         KC_ENTER,          KC_NO,               KC_TAB,              KC_TAB,             LT(3,KC_SPC)
+    KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
+    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLASH,
+    KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCOLON,          KC_DOT,
+    KC_LSPO,            FLSH,               FRMWR,              QMKLS,              KC_NO,              KC_NO,                                                       KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
+    KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_DEL),                          TO(0),               TO(0),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_TRNS,
+                                                                                    KC_SPC,             KC_ENTER,          KC_PGUP,             KC_PGDN,             KC_TAB,             KC_SPC
   ),
 };
 
@@ -68,17 +55,14 @@ void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
 
-const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][4] = {
+const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
 
     [0] = { {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255}, {171,252,255} },
 
-    [1] = { {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255}, {122,255,255} },
+    [1] = { {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255} },
 
     [2] = { {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255}, {82,252,255} },
 
-    [3] = { {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255}, {82,25,255} },
-
-    [4] = { {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255}, {243,255,255} },
 };
 
 void set_layer_color(int layer) {
@@ -110,12 +94,6 @@ void rgb_matrix_indicators_user(void) {
     case 2:
       set_layer_color(2);
       break;
-    case 3:
-      set_layer_color(3);
-      break;
-    case 4:
-      set_layer_color(4);
-      break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
       rgb_matrix_set_color_all(0, 0, 0);
@@ -128,113 +106,139 @@ typedef struct {
     uint8_t step;
 } tap;
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+      //  case KC_LSFT:
+        case KC_LSPO:
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+    switch (keycode) {
+      //  case KC_RSFT:
+        case KC_RSPC:
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
-    switch (keycode) {
-        case ELPS:
-        if (record->event.pressed) {
-            SEND_STRING (SS_LALT(";"));
-        }
+  switch (keycode) {
+      case QMKLS:
+      if (record->event.pressed) {
+          SEND_STRING ("cd Sources/qmk_firmware");
+      }
 
-        break;
-        case QMKLS:
-        if (record->event.pressed) {
-            SEND_STRING ("cd Documents/qmk_firmware");
-        }
+      break;
+      case FRMWR:
+      if (record->event.pressed) {
+          SEND_STRING ("qmk compile -kb moonlander -km FlowHD");
+      }
 
-        break;
-        case FRMWR:
-        if (record->event.pressed) {
-            SEND_STRING ("qmk compile -kb moonlander -km FlowHD");
-        }
+      break;
+      case FLSH:
+      if (record->event.pressed) {
+          SEND_STRING ("qmk flash -kb moonlander -km FlowHD");
+      }
 
-        break;
-        case FLWHD:
-        if (record->event.pressed) {
-            SEND_STRING ("cd keyboards/moonlander/keymaps/FlowHD");
-        }
+      break;
+      case SLCTALL:
+      if (record->event.pressed) {
+          tap_code16(LCTL(KC_A)); // Select All
+          return false;
+      }
+      return true;             // Return true for normal processing of tap keycode
 
-        break;
-        case QWRT:
-        if (record->event.pressed) {
-            SEND_STRING (SS_TAP(X_ESC));
-            layer_invert(2);
-            return false;
-        }
+      break;
+      case UNDO:
+      if (record->event.pressed) {
+          tap_code16(LCTL(KC_Z)); // Send Cmd-Z for Undo
+          return false;
+      }
+      return true;             // Return true for normal processing of tap keycode
 
-        break;
-        case SLCTALL:
-        if (record->event.pressed) {
-            tap_code16(LGUI(KC_A)); // Select All 
-            return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case COPY:
+      if (record->event.pressed) {
+          tap_code16(LCTL(KC_C)); // Send Cmd-C for Copy
+          return false;
+      }
+      return true;             // Return true for normal processing of tap keycode
 
-        break;
-        case UNDO:
-        if (record->event.pressed) {
-            tap_code16(LGUI(KC_Z)); // Send Cmd-Z for Undo 
-            return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case CUT:
+      if (record->event.pressed) {
+          tap_code16(LCTL(KC_X)); // Send Cmd-X for Cut
+          return false;
+      }
+      return true;             // Return true for normal processing of tap keycode
 
-        break;
-        case COPY:
-        if (record->event.pressed) {
-            tap_code16(LGUI(KC_C)); // Send Cmd-C for Copy
-            return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
-    
-        break;
-        case CUT:
-        if (record->event.pressed) {
-            tap_code16(LGUI(KC_X)); // Send Cmd-X for Cut 
-            return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case PASTE:
+      if (record->event.pressed) {
+          tap_code16(LCTL(KC_V)); // Send Cmd-V for Paste
+          return false;
+      }
+      return true;             // Return true for normal processing of tap keycode
 
-        break; 
-        case PASTE:
-        if (record->event.pressed) {
-            tap_code16(LGUI(KC_V)); // Send Cmd-V for Paste
-            return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case ELPS: // Type ... as a single character
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("2026");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
 
-        break;
-        case LT(0,KC_LBRC):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(KC_LPRN); // Hold [ to send (
-                return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case MDASH: // Long Dash
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("2014");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
 
-        break;
-        case LT(0,KC_RBRC):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(KC_RPRN); // Hold ] to send )
-                return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case NDASH: // Middle Dash
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("2013");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
 
-        break;
-        case LGUI_T(KC_DQUO):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_DQUO); // Left Command Key on Hold
-                return false;        // Return false to ignore further processing of key
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+      case DVIDE: // Division Symbol
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("00f7");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
 
-        break;
-        case LT(0,KC_MINUS):
-            if (!record->tap.count && record->event.pressed) {
-                tap_code16(KC_MPLY); // Hold ? to send Play/Pause 
-                return false;
-        }
-        return true;             // Return true for normal processing of tap keycode
+      break;
+    case DGREE: // Degree Symbol
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("00b0");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
 
-        break;
-    }
+      break;
     return true;
+  }
+  return true;
 }

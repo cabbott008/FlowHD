@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
 
   [1] = LAYOUT_moonlander(
     KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
-    KC_TAB,             KC_NO,              R_XXX,              R_EXC,              R_QUE,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
+    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
     KC_ESC,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_2),         LSFT(KC_MINUS),     MDASH,              NDASH,              KC_LBRC,            KC_RBRC,
     SC_LSPO,            KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,                                                       LSFT(KC_4),         LSFT(KC_5),         KC_GRV,             LSFT(KC_GRV),       LSFT(KC_LBRC),      LSFT(KC_RBRC),
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_BSPC),                         TO(0),               TO(0),                                   KC_DEL,             RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_RSFT,
@@ -44,9 +44,9 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
 
   [2] = LAYOUT_moonlander(
     KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
-    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLS,
+    KC_TAB,             FLSH,               QMKLS,              KC_NO,              R_QUE,              R_EXC,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLS,
     KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCLN,          KC_DOT,
-    SC_LSPO,            FLSH,               FRMWR,              QMKLS,              KC_NO,              KC_NO,                                                       KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
+    SC_LSPO,            FRMWR,              R_XXX,              KC_NO,              KC_NO,              KC_NO,                                                       KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_DEL),                          TO(0),               TO(0),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_TRNS,
                                                                                     KC_SPC,             KC_ENTER,          KC_PGUP,             KC_PGDN,             KC_TAB,             KC_SPC
   ),

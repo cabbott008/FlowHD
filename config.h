@@ -17,7 +17,6 @@
 #define COMBO_TERM 50     // How quickly all combo keys must be pressed in succession to trigger
 #define COMBO_HOLD_TERM 100  // How long at least one of the combo keys must be held to trigger
 #define COMBO_MUST_HOLD_MODS
-#define IGNORE_MOD_TAP_INTERRUPT
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_VARIABLE_LEN
 #define PERMISSIVE_HOLD // Nested Taps are allowed under the Tapping Term

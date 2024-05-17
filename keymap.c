@@ -3,7 +3,7 @@
 #include "keymap_combo.h"
 
 enum custom_keycodes {
-    ELPS = ML_SAFE_RANGE,
+    ELPS = SAFE_RANGE,
     MDASH,
     NDASH,
     DVIDE,
@@ -114,7 +114,6 @@ typedef struct {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-      //  case KC_LSFT:
         case KC_LSPO:
             // Immediately select the hold action when another key is pressed.
             return true;
@@ -123,7 +122,6 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
     switch (keycode) {
-      //  case KC_RSFT:
         case KC_RSPC:
             // Immediately select the hold action when another key is pressed.
             return true;

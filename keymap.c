@@ -11,6 +11,9 @@ enum custom_keycodes {
     QMKLS,
     FRMWR,
     FLSH,
+    R-QUE,
+    R-EXC,
+    R-XXX,
     SLCTALL,
     UNDO,
     COPY,
@@ -32,7 +35,7 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
 
   [1] = LAYOUT_moonlander(
     KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
-    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
+    KC_TAB,             KC_NO,              R-XXX,              R-EXC,              R-QUE,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
     KC_ESC,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_2),         LSFT(KC_MINUS),     MDASH,              NDASH,              KC_LBRC,            KC_RBRC,
     KC_LSPO,            KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,                                                       LSFT(KC_4),         LSFT(KC_5),         KC_GRV,             LSFT(KC_GRV),       LSFT(KC_LBRC),      LSFT(KC_RBRC),
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_BSPC),                         TO(0),               TO(0),                                   KC_DEL,             RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_RSFT,
@@ -132,7 +135,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
       case QMKLS:
       if (record->event.pressed) {
-          SEND_STRING ("cd Sources/qmk_firmware");
+          SEND_STRING ("cd /home/ca/Sources/qmk_firmware");
       }
 
       break;
@@ -232,6 +235,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("00b0");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+    case R-QUE: // Big Red Question Mark
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("2753");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+    case R-EXC: // Big Red Exclamation Mark
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("2757");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+    case R-XXX: // Big Red X
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("274c");
           tap_code16 (KC_SPC);
           return false;
       }

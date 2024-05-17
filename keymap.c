@@ -11,14 +11,16 @@ enum custom_keycodes {
     QMKLS,
     FRMWR,
     FLSH,
-    R-QUE,
-    R-EXC,
-    R-XXX,
+    R_QUE,
+    R_EXC,
+    R_XXX,
     SLCTALL,
     UNDO,
     COPY,
     CUT,
     PASTE,
+    KC_LSPO,
+    KC_RSPC,
 };
 
 // Layer 0 = Basic Qwerty (Blue), Layer 1 = FunctionKeys & NumPad (Green), Layer 2 = Various Specialty Keys
@@ -26,8 +28,8 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
     KC_EQUAL,           KC_9,               KC_5,               KC_1,               KC_3,               KC_7,              TO(2),               TO(2),               KC_6,               KC_2,               KC_0,               KC_4,               KC_8,               KC_MINUS,
-    LT(2, KC_TAB),      KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,              LGUI(KC_P),          LGUI(KC_W),          KC_Y,               KC_U,               KC_I,               KC_O,               KC_P,               LT(2, KC_BSLASH),
-    LT(1, KC_ESC),      KC_A,               KC_S,               KC_D,               KC_F,               KC_G,              KC_LBRC,             KC_RBRC,             KC_H,               KC_J,               KC_K,               KC_L,               KC_SCOLON,          KC_QUOTE,
+    LT(2, KC_TAB),      KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,              LGUI(KC_P),          LGUI(KC_W),          KC_Y,               KC_U,               KC_I,               KC_O,               KC_P,               LT(2, KC_BSLS),
+    LT(1, KC_ESC),      KC_A,               KC_S,               KC_D,               KC_F,               KC_G,              KC_LBRC,             KC_RBRC,             KC_H,               KC_J,               KC_K,               KC_L,               KC_SCLN,            KC_QUOTE,
     KC_LSPO,            KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                                                        KC_N,               KC_M,               KC_COMMA,           KC_DOT,             KC_SLASH,           KC_RSPC,
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_BSPC),                         TO(1),               TO(1),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_RSFT,
                                                                                     KC_SPC,             KC_ENTER,          KC_HOME,             KC_END,              LT(1, KC_TAB),      KC_SPC
@@ -35,7 +37,7 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
 
   [1] = LAYOUT_moonlander(
     KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
-    KC_TAB,             KC_NO,              R-XXX,              R-EXC,              R-QUE,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
+    KC_TAB,             KC_NO,              R_XXX,              R_EXC,              R_QUE,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_7),         LSFT(KC_3),         LSFT(KC_1),         LSFT(KC_8),         ELPS,               LSFT(KC_6),
     KC_ESC,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             KC_NO,               KC_NO,               LSFT(KC_2),         LSFT(KC_MINUS),     MDASH,              NDASH,              KC_LBRC,            KC_RBRC,
     KC_LSPO,            KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,                                                       LSFT(KC_4),         LSFT(KC_5),         KC_GRV,             LSFT(KC_GRV),       LSFT(KC_LBRC),      LSFT(KC_RBRC),
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_BSPC),                         TO(0),               TO(0),                                   KC_DEL,             RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_RSFT,
@@ -44,8 +46,8 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
 
   [2] = LAYOUT_moonlander(
     KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
-    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLASH,
-    KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCOLON,          KC_DOT,
+    KC_TAB,             KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_NO,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLS,
+    KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCLN,          KC_DOT,
     KC_LSPO,            FLSH,               FRMWR,              QMKLS,              KC_NO,              KC_NO,                                                       KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_DEL),                          TO(0),               TO(0),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_TRNS,
                                                                                     KC_SPC,             KC_ENTER,          KC_PGUP,             KC_PGDN,             KC_TAB,             KC_SPC
@@ -241,7 +243,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
       break;
-    case R-QUE: // Big Red Question Mark
+    case R_QUE: // Big Red Question Mark
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("2753");
@@ -251,7 +253,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
       break;
-    case R-EXC: // Big Red Exclamation Mark
+    case R_EXC: // Big Red Exclamation Mark
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("2757");
@@ -261,7 +263,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
       break;
-    case R-XXX: // Big Red X
+    case R_XXX: // Big Red X
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("274c");

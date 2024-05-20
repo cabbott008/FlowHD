@@ -14,6 +14,7 @@ enum custom_keycodes {
     R_QUE,
     R_EXC,
     R_XXX,
+    WARN,
     SLCTALL,
     UNDO,
     COPY,
@@ -45,8 +46,8 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   [2] = LAYOUT_moonlander(
     KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
     KC_TAB,             FLSH,               QMKLS,              KC_NO,              R_QUE,              R_EXC,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLS,
-    KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCLN,          KC_DOT,
-    SC_LSPO,            FRMWR,              R_XXX,              KC_NO,              KC_NO,              KC_NO,                                                       KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
+    KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCLN,           KC_DOT,
+    SC_LSPO,            FRMWR,              R_XXX,              KC_NO,              KC_NO,              WARN,                                                        KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_DEL),                          TO(0),               TO(0),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_TRNS,
                                                                                     KC_SPC,             KC_ENTER,          KC_PGUP,             KC_PGDN,             KC_TAB,             KC_SPC
   ),
@@ -254,6 +255,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("2757");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+    case WARN: // Warning Emoji
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("26A0");
           tap_code16 (KC_SPC);
           return false;
       }

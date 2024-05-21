@@ -16,7 +16,11 @@ enum custom_keycodes {
     R_XXX,
     PT_RHT,
     PT_LFT,
-    WARN,
+    PT_DWN,
+    PT_UP,
+    PRAYER,
+    STOP,
+    WARNING,
     SLCTALL,
     UNDO,
     COPY,
@@ -46,10 +50,10 @@ const uint16_t PROGMEM keymaps[] [MATRIX_ROWS] [MATRIX_COLS] = {
   ),
 
   [2] = LAYOUT_moonlander(
-    KC_NO,              KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              KC_TRNS,
-    KC_TAB,             FLSH,               QMKLS,              KC_NO,              R_QUE,              R_EXC,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLS,
+    FLSH,               KC_F9,              KC_F5,              KC_F1,              KC_F3,              KC_F7,             KC_F11,              KC_F12,              KC_F6,              KC_F2,              KC_F10,             KC_F4,              KC_F8,              FRMWR,
+    KC_TAB,             PT_UP,              PRAYER,             STOP,               R_QUE,              R_EXC,             DGREE,               DVIDE,               KC_EQUAL,           KC_7,               KC_8,               KC_9,               KC_COMMA,           KC_BSLS,
     KC_ESC,             UNDO,               SLCTALL,            CUT,                COPY,               PASTE,             KC_LBRC,             KC_RBRC,             KC_MINUS,           KC_4,               KC_5,               KC_6,               KC_SCLN,           KC_DOT,
-    SC_LSPO,            KC_NO,              R_XXX,              PT_RHT,              PT_LFT,            WARN,                                                        KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
+    SC_LSPO,            PT_DWN,              R_XXX,              PT_RHT,              PT_LFT,            WARNING,                                                     KC_0,               KC_1,               KC_2,               KC_3,               KC_SLASH,           KC_TRNS,
     KC_LSFT,            LCTL_T(KC_NO),      LALT_T(KC_LEFT),    LGUI_T(KC_RIGHT),   LCTL(KC_DEL),                          TO(0),               TO(0),                                   KC_BSPC,            RCTL_T(KC_DOWN),    RALT_T(KC_UP),      RGUI_T(KC_NO),      KC_TRNS,
                                                                                     KC_SPC,             KC_ENTER,          KC_PGUP,             KC_PGDN,             KC_TAB,             KC_SPC
   ),
@@ -263,7 +267,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
       break;
-    case PT_RHT: // Warning Emoji
+    case PT_RHT: // Hand pointing right
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("1f449");
@@ -273,7 +277,47 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
       break;
-    case PT_LFT: // Warning Emoji
+    case PT_UP: // Hand point up
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("1f446");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+    case PT_DWN: // Hand point down
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("1f446");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+   case PRAYER: // Praying hands
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("1f64f");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+   case STOP: // Praying hands
+      if (record->event.pressed) {
+          SEND_STRING (SS_LCTL(SS_LSFT("u")));
+          SEND_STRING ("1f6d1");
+          tap_code16 (KC_SPC);
+          return false;
+      }
+      return true;
+
+      break;
+    case PT_LFT: // Hand pointing left
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("1f448");
@@ -283,7 +327,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
       break;
-    case WARN: // Warning Emoji
+    case WARNING: // Warning Emoji
       if (record->event.pressed) {
           SEND_STRING (SS_LCTL(SS_LSFT("u")));
           SEND_STRING ("26a0");
